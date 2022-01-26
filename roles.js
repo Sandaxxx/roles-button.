@@ -54,17 +54,46 @@ module.exports = {
             
             Client.on("interactionCreate", async interaction =>  {
                 if(interaction.isButton()){
+
+                     // ADD ROLE LIVE 
                     interaction.deferUpdate();
                     if(interaction.customId === "live")
                     interaction.member.roles.add("934725966838788126")
+			
+                    // REMOVE ROLES
+                    if(interaction.customId === "live")
+                    if(interaction.member.roles.cache.has("934725966838788126")) {
+                    interaction.member.roles.remove(events)
+                         }
+                     //================================================================================================
 
+                    //   ADD ROLE GIVEAWAY
                     if(interaction.customId === "giveaway")
                     interaction.member.roles.add("934726238159913010") 
-
+			
+                    // REMOVE ROLES
+                     if(interaction.customId === "giveaway")
+                    if(interaction.member.roles.cache.has("934726238159913010")) {
+                            interaction.member.roles.remove(events)
+                        }
+                     //================================================================================================
+			
+                    // ADD ROLE EVENTS
 
                     if(interaction.customId === "events")
                     interaction.member.roles.add("934725321402503198")
-                     interaction.followUp({ content: " <a:valid:933726196125028413> **Vos rôles ont été modifiés !**", ephemeral: true })
+			
+                     // REMOVE ROLES
+                   if(interaction.customId === "events")
+                    if(interaction.member.roles.cache.has("934725321402503198")) {
+                            interaction.member.roles.remove(events)
+                        }
+                    
+                     //================================================================================================
+                     
+                      interaction.followUp({ content: " <a:valid:933726196125028413> **Vos rôles ont été modifiés !**", ephemeral: true })
+
+                    
 
           .then(console.log)
           .catch(console.error)
