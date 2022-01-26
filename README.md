@@ -1,2 +1,3 @@
 # roles-button.js
-roles add button JS
+
+command to add a role when a person who on the button ! 
